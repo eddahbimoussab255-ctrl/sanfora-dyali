@@ -1,0 +1,158 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#170910">
+  <meta name="description" content="عالم صغير تصاوب غير على قبل رشيدة. 11:11 ❤️">
+  <meta property="og:title" content="11:11 — لرشيدة ❤️">
+  <meta property="og:description" content="كاينين ناس كيتمنّاو أمنيات فـ 11:11... وأنا أمنيتي عندها اسم واحد.">
+  <title>11:11 — لرشيدة ❤️</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Naskh+Arabic:wght@400;500;600;700&family=Noto+Sans+Arabic:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <canvas class="sky" id="sky" aria-hidden="true"></canvas>
+  <div class="grain" aria-hidden="true"></div>
+  <div class="petals" id="petals" aria-hidden="true"></div>
+
+  <aside class="music" aria-label="مشغل الموسيقى">
+    <button class="music-play" id="musicToggle" type="button" aria-label="شغّلي الموسيقى">
+      <span class="play-icon" aria-hidden="true">▶</span>
+    </button>
+    <div class="music-info"><span id="musicTitle">نغمة هادئة كتسناك</span><small id="musicState">ضغطي باش تبدا</small></div>
+    <span class="volume-icon" aria-hidden="true">♫</span>
+    <input id="musicVolume" type="range" min="0" max="1" step="0.05" value="0.35" aria-label="علّي ولا نقصي صوت الموسيقى">
+    <audio id="musicAudio" loop preload="none"></audio>
+  </aside>
+
+  <main>
+    <section class="intro" id="intro">
+      <div class="intro-content">
+        <div class="clock" aria-label="الساعة 11:11">
+          <span class="clock-orbit"></span><span class="clock-orbit second"></span>
+          <span class="clock-time">11:11</span><span class="clock-star">✦</span>
+        </div>
+        <p class="eyebrow intro-eyebrow">حكاية صغيرة مكتوبة فالنجوم</p>
+        <h1>كاينين ناس كيتمنّاو<br><em>أمنيات فـ 11:11...</em></h1>
+        <p class="intro-note">وأنا أمنيتي عندها اسم واحد ❤️<br><span>رشيدة، هاد المفاجأة تصاوبات غير على قبلك.</span></p>
+        <button class="button button-main intro-button" id="enterExperience" type="button">دخلي شوفي المفاجأة ديالك <span>❤️</span><i aria-hidden="true">←</i></button>
+        <span class="intro-sign">تصاوب بحب · 11 نونبر</span>
+      </div>
+      <button class="music-hint" id="musicHint" type="button"><span aria-hidden="true">♫</span> شغّلي نغمة هادئة</button>
+    </section>
+
+    <div class="experience" id="experience" hidden>
+      <header class="topbar">
+        <a class="brand" href="#top" id="backToTop">11:11 <span>لـ رشيدة</span></a>
+        <span class="topbar-note">عالم صغير تصاوب غير ليك <b>♥</b></span>
+      </header>
+
+      <section class="section letter-section" id="top">
+        <div class="section-heading">
+          <p class="eyebrow">قبل كلشي، هادي ليك</p>
+          <h2>رسالة <em>من القلب.</em></h2>
+          <p>كاين كلام كيخرج زوين ملي كنكتبوه من القلب.</p>
+        </div>
+        <div class="letter-stage">
+          <button class="envelope" id="envelope" type="button" aria-expanded="false" aria-controls="letterCard">
+            <span class="envelope-flap"></span>
+            <span class="paper-heart">♥</span>
+            <span class="envelope-front">
+              <span class="envelope-kicker">رسالة غير ليك</span>
+              <span class="envelope-name">لأحلى<br>رشيدة <b>♥</b></span>
+              <span class="wax-seal">♥</span>
+            </span>
+          </button>
+          <p class="envelope-hint" id="envelopeHint">كليكي على القلب باش تحلّي الرسالة</p>
+          <article class="letter-card" id="letterCard" hidden>
+            <span class="letter-eyebrow">11:11 · أمنية مكتوبة من القلب</span>
+            <p class="letter-copy">رشيدة ديالي ❤️<br><br>اليوم 11/11 وبغيت نقول ليك واحد الحاجة...<br><br>إلا كان عندي الحق نتمنى غير أمنية وحدة، غادي نتمنى نبقا نشوف ضحكتك ديما.<br><br>نتي ماشي غير إنسانة عزيزة عليا، نتي واحد من أجمل الأسباب اللي كيخلوني نبتاسم.<br><br>بغيتك تعرفي بلي عندك بلاصة خاصة فقلبي، وبلي حتى الكلمات ما كافياش باش نوصف ليك شحال نتي غالية عندي.<br><br>إلا رجع بيا الوقت، غادي نختارك مرة أخرى.<br><br>كنبغيك يا رشيدة ❤️</p>
+            <span class="letter-heart">♥</span>
+          </article>
+          <button class="text-link continue-link" id="continueButton" type="button" hidden>كمّلي الحكاية <span aria-hidden="true">↓</span></button>
+        </div>
+      </section>
+
+      <section class="section reasons-section" id="reasons">
+        <div class="section-heading">
+          <p class="eyebrow">غير شي حاجة من بين ألف حاجة</p>
+          <h2>علاش نتي <em>مميزة عندي؟</em></h2>
+          <p>كليكي على كل بطاقة، راه ديما كاين ما يتقال ليك.</p>
+        </div>
+        <div class="reason-grid">
+          <button class="reason-card" type="button" data-title="ضحكتك ❤️" data-message="ضحكتك بوحدها كتقدر تبدل ليا نهار كامل."><span class="reason-front"><span class="reason-icon">❤️</span><strong>ضحكتك</strong><small>كلمة زوينة ليك ✦</small></span><span class="reason-back" hidden></span></button>
+          <button class="reason-card" type="button" data-title="عينيك 🌹" data-message="فيهم واحد الجمال اللي ما كيتشرحش بالكلام."><span class="reason-front"><span class="reason-icon">🌹</span><strong>عينيك</strong><small>كلمة زوينة ليك ✦</small></span><span class="reason-back" hidden></span></button>
+          <button class="reason-card" type="button" data-title="وجودك 💕" data-message="غير ملي كتكوني قريبة مني، كلشي كيولي زوين."><span class="reason-front"><span class="reason-icon">💕</span><strong>وجودك</strong><small>كلمة زوينة ليك ✦</small></span><span class="reason-back" hidden></span></button>
+          <button class="reason-card" type="button" data-title="قلبك ✨" data-message="أجمل حاجة فيك هي الإنسانة الزوينة اللي نتي عليها."><span class="reason-front"><span class="reason-icon">✨</span><strong>قلبك</strong><small>كلمة زوينة ليك ✦</small></span><span class="reason-back" hidden></span></button>
+        </div>
+      </section>
+
+      <section class="section counter-section">
+        <div class="counter-panel">
+          <div class="counter-copy">
+            <p class="eyebrow">كل ثانية معاك هدية</p>
+            <h2>والوقت معاك<br><em>كيولي أحلى.</em></h2>
+            <p>غير تذكار صغير بلي أحلى حاجة فنهاري هي نتي.</p>
+          </div>
+          <div class="counter-grid" id="counterGrid" aria-live="polite">
+            <div class="counter-empty"><span>♥</span><p>كل ثانية كنعيشها معاك كتستاهل تتحسب.</p><small>زيد تاريخ البداية فـ <code>script.js</code> باش يبدا العداد.</small></div>
+          </div>
+          <span class="infinity" aria-hidden="true">∞</span>
+        </div>
+      </section>
+
+      <section class="section memories-section" id="memories">
+        <div class="section-heading">
+          <p class="eyebrow">لحظاتنا اللي كنحتافظو بها</p>
+          <h2><em>ذكرياتنا.</em></h2>
+          <p>كل تصويرة فيهم لحظة بغيت نعيشها مرة أخرى.</p>
+        </div>
+        <div class="gallery" id="gallery">
+          <div class="gallery-empty" id="galleryEmpty">
+            <div class="polaroid"><span aria-hidden="true">♡</span><b>ذكرياتكم<br>غادي تبقى هنا</b></div>
+            <p>كاينين لحظات زوينة كتستاهل تبقى ديما قدام عينيك.</p>
+            <small>زيدي تصاوركم وخلي هاد الركن عامر بذكرياتكم الحقيقية.</small>
+          </div>
+          <figure class="photo-frame" id="photoFrame" hidden>
+            <img id="photoImage" alt="ذكرى زوينة ديالنا">
+            <figcaption><label for="photoCaption">كتبي تعليق على الصورة</label><input id="photoCaption" maxlength="120" placeholder="كتبي شي كلمة زوينة..."></figcaption>
+            <button class="photo-remove" id="removePhoto" type="button" aria-label="حيدي هاد الصورة">×</button>
+          </figure>
+          <div class="gallery-controls" id="galleryControls" hidden>
+            <button class="circle-button" id="previousPhoto" type="button" aria-label="الذكرى اللي قبل">→</button>
+            <span id="photoCount">٠١ / ٠١</span>
+            <button class="circle-button" id="nextPhoto" type="button" aria-label="الذكرى اللي من بعد">←</button>
+          </div>
+          <label class="upload-button" for="photoUpload"><span aria-hidden="true">＋</span> زيدي تصاوركم</label>
+          <input class="file-input" id="photoUpload" type="file" accept="image/*" multiple>
+          <p class="gallery-note" id="galleryNote" hidden>الصور اللي كتزيدي من تلفونك كيبقاو محفوظين غير فهاد المتصفح.</p>
+          <p class="gallery-error" id="galleryError" role="alert" hidden></p>
+        </div>
+      </section>
+
+      <section class="section surprise-section">
+        <div class="surprise-card">
+          <span class="spark spark-one" aria-hidden="true">✦</span><span class="spark spark-two" aria-hidden="true">✧</span>
+          <div class="question-heart" aria-hidden="true">♥</div>
+          <p class="eyebrow">سؤال خاص غير بيك</p>
+          <h2>رشيدة، واش عارفة<br><em>شحال نتي غالية عندي؟</em> 🥺</h2>
+          <button class="button button-main" id="revealSurprise" type="button">قول ليا ❤️</button>
+          <div class="final-message" id="finalMessage" hidden>
+            <p class="eyebrow">أمنيتي كل مرة</p>
+            <h3>من بين ملايين الناس،<br>قلبي اختار نتي يا رشيدة ❤️</h3>
+            <p>11:11 — كل أمنية عندي فيها نتي.</p>
+            <button class="text-link" id="backToStart" type="button">رجعي لعالمنا الصغير <span aria-hidden="true">↑</span></button>
+          </div>
+        </div>
+      </section>
+
+      <footer class="footer">تصاوب بحب لـ رشيدة · 11:11 <span>♥</span></footer>
+    </div>
+  </main>
+  <canvas id="fireworks" class="fireworks" aria-hidden="true"></canvas>
+</body>
+</html>
